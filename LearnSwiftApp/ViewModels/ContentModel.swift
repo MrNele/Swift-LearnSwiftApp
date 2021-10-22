@@ -36,7 +36,7 @@ class ContentModel: ObservableObject {
                 print("Couldn't parse local data")
             }
             // parse the Style Data
-            let styleUrl = Bundle.main.url(forResource: "style", withExtension: "html")
+            let styleUrl = Bundle.main.url(forResource: "style", withExtension: "html")//
             
             do{
                 // read the file into a data object

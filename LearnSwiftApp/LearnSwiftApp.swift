@@ -12,7 +12,7 @@ struct LearnSwiftApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .environmentObject(ContentModel())
+                .environmentObject(ContentModel())//
         }
     }
 }
