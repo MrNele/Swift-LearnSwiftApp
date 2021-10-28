@@ -22,8 +22,9 @@ struct ContentDetailView: View {
                 VideoPlayer(player: AVPlayer(url: url!))
                     .cornerRadius(10)
         }
-        // TODO: Description
-        
+        // TDescription
+        CodeTextView()
+            
         // Next lesson button
         
         // Show next lesson button, only if there is a next lesson
@@ -49,6 +50,7 @@ struct ContentDetailView: View {
             }
         }
         .padding()
+        .navigationTitle(lesson?.title ?? "")
     }
 }
 

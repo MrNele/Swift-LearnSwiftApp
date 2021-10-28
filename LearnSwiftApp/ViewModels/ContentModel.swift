@@ -20,6 +20,9 @@ class ContentModel: ObservableObject {
     @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
     
+    // Current lesson explanation
+    @Published var lessonDescription = NSAttributedString()
+    
     var styleData: Data?
     
     init() {
@@ -95,6 +98,7 @@ class ContentModel: ObservableObject {
         }
         // Set the current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
+        lessonDescription = addStyling(currentLesson!.explanation)
         
     }
     
@@ -108,16 +112,51 @@ class ContentModel: ObservableObject {
             
             // set the current lesson property
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
+            lessonDescription = addStyling(currentLesson!.explanation)
         }
         else {
             // reset the lessons state
             currentLessonIndex = 0
-            currentLesson = nil
+            currentLesson = nil            
         }
     }
     
     func hasNextLesson() -> Bool{
   
         return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
+    }
+    
+    // MARK: - Code Styling
+    
+    private func addStyling(_ htmlString: String) -> NSAttributedString {
+        var resultString = NSAttributedString()
+        var data = Data()
+        
+        // Add the styling data
+        if styleData != nil {
+            data.append(self.styleData!)
+        }
+        
+        // Add the html data
+        data.append(Data(htmlString.utf8))
+        
+        // Technique 1
+        // Convert to attributed string
+        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            
+            resultString = attributedString
+    }
+        // Technique 2
+        // Convert to attributed string
+        
+//        do {
+//            let attributedString = try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+//
+//                resultString = attributedString
+//        }
+//    catch {
+//    print("Couldn't turn html into attributed string")
+//    }
+        return resultString
     }
 }
