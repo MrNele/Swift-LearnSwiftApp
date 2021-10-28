@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8882CDA22725FF620059FD1A /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8882CDA12725FF620059FD1A /* HomeViewRow.swift */; };
 		888529942722C76C00B91317 /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = 888529922722C76C00B91317 /* style.html */; };
 		888529952722C76C00B91317 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 888529932722C76C00B91317 /* data.json */; };
 		888529972722E02400B91317 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888529962722E02400B91317 /* Models.swift */; };
@@ -15,9 +16,15 @@
 		8888D3F02720436300305C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8888D3EF2720436300305C19 /* Assets.xcassets */; };
 		8888D3F32720436300305C19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8888D3F22720436300305C19 /* Preview Assets.xcassets */; };
 		8888D4012720446F00305C19 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888D4002720446F00305C19 /* ContentModel.swift */; };
+		889DF9802729359500B03A18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889DF97F2729359500B03A18 /* ContentView.swift */; };
+		889DF982272951D100B03A18 /* ContentViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889DF981272951D100B03A18 /* ContentViewRow.swift */; };
+		889DF984272970E600B03A18 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889DF983272970E600B03A18 /* ContentDetailView.swift */; };
+		889DF98727297E9A00B03A18 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889DF98627297E9900B03A18 /* AVKit.framework */; platformFilter = maccatalyst; };
+		889DF9892729EA2600B03A18 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889DF9882729EA2600B03A18 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8882CDA12725FF620059FD1A /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
 		888529922722C76C00B91317 /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
 		888529932722C76C00B91317 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		888529962722E02400B91317 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -28,6 +35,11 @@
 		8888D3F22720436300305C19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8888D3F42720436300305C19 /* LearnSwiftApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LearnSwiftApp.entitlements; sourceTree = "<group>"; };
 		8888D4002720446F00305C19 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		889DF97F2729359500B03A18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		889DF981272951D100B03A18 /* ContentViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewRow.swift; sourceTree = "<group>"; };
+		889DF983272970E600B03A18 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
+		889DF98627297E9900B03A18 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AVKit.framework; sourceTree = DEVELOPER_DIR; };
+		889DF9882729EA2600B03A18 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				889DF98727297E9A00B03A18 /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +59,7 @@
 			children = (
 				8888D3EA2720436100305C19 /* LearnSwiftApp */,
 				8888D3E92720436100305C19 /* Products */,
+				889DF98527297E9300B03A18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +107,7 @@
 			children = (
 				888529932722C76C00B91317 /* data.json */,
 				888529922722C76C00B91317 /* style.html */,
+				889DF9882729EA2600B03A18 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -117,8 +132,20 @@
 			isa = PBXGroup;
 			children = (
 				8888D3ED2720436100305C19 /* HomeView.swift */,
+				8882CDA12725FF620059FD1A /* HomeViewRow.swift */,
+				889DF97F2729359500B03A18 /* ContentView.swift */,
+				889DF981272951D100B03A18 /* ContentViewRow.swift */,
+				889DF983272970E600B03A18 /* ContentDetailView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		889DF98527297E9300B03A18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				889DF98627297E9900B03A18 /* AVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +221,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8888D3EE2720436100305C19 /* HomeView.swift in Sources */,
+				8882CDA22725FF620059FD1A /* HomeViewRow.swift in Sources */,
+				889DF9802729359500B03A18 /* ContentView.swift in Sources */,
+				889DF984272970E600B03A18 /* ContentDetailView.swift in Sources */,
 				8888D3EC2720436100305C19 /* LearnSwiftApp.swift in Sources */,
+				889DF982272951D100B03A18 /* ContentViewRow.swift in Sources */,
 				8888D4012720446F00305C19 /* ContentModel.swift in Sources */,
 				888529972722E02400B91317 /* Models.swift in Sources */,
+				889DF9892729EA2600B03A18 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +290,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -312,7 +344,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};

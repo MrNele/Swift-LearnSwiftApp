@@ -7,7 +7,7 @@
             "image": "swift",
             "time": "3 hours",
             "description": "Understand the fundamentals of the Swift programming language.",
-            "lessons": [//
+            "lessons": [
                 {
                     "id": 0,
                     "title": "Constants and Variables",
@@ -198,3 +198,4 @@
         }
     }
 ]
+
