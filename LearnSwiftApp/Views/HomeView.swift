@@ -33,20 +33,29 @@ struct HomeView: View {
                                                     model.beginModule(module.id)
                                                 }),
                                     tag: module.id,
-                                    selection: $model.currentContentSelected,
-                                        label: {
-                                            
+                                    selection: $model.currentContentSelected) {
                                         
                                     // Learning card
-                                    HomeViewRow(image: module.content.image, title: "Learn  \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
-                                    
-                                })
+                                    HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
+                                }
                                 
-                               
+                                NavigationLink(
+                                    destination: TestView()
+                                        .onAppear(perform: {
+                                        model.beginTest(module.id)
+                                    }),
+                                    tag: module.id,
+                                    selection: $model.currentContentSelected) {
                                 
                                 // test card
                                 HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lessons", time: module.test.time)
-                            }
+                                
+                                }
+                                
+                                NavigationLink(destination: EmptyView() ) {
+                                    EmptyView()
+                                }
+                                               
                         }
                     }
                     .accentColor(.black)
@@ -56,7 +65,7 @@ struct HomeView: View {
             .navigationTitle("Get started")
         }
     }
-    
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {
@@ -65,4 +74,5 @@ struct HomeView_Previews: PreviewProvider {
             .environmentObject(ContentModel())
     }
 }
+
 
