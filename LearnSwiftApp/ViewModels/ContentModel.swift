@@ -22,8 +22,10 @@ class ContentModel: ObservableObject {
     
     // Current lesson explanation
     @Published var lessonDescription = NSAttributedString()
-    
     var styleData: Data?
+    
+    // Current selected content amd test
+    @Published var currentContentSelected: Int?
     
     init() {
         
@@ -121,7 +123,7 @@ class ContentModel: ObservableObject {
         }
     }
     
-    func hasNextLesson() -> Bool{
+    func hasNextLesson() -> Bool {
   
         return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
     }
