@@ -7,27 +7,6 @@
 
 import SwiftUI
 
-
-//
-//                        Text(model.currentQuestion!.answers[index])
-//                    }
-//
-//                        Text("Submit")
-//                            .bold()
-//                            .foregroundColor(.white)
-//                    }.padding()
-//                }
-//                .disabled(selectedAnswerIndex == nil)
-//            }
-//            .navigationTitle("\(model.currentModule?.category ?? "") Test")
-//        }
-//        else {
-//            // If test hasn't loaded because of IoS 14.5 and higher
-//            ProgressView() // it will gonna trigger onAppears in HomeView in Test Card, file HomeView
-//        }
-//    }
-//}
-
 struct TestView: View {
     
     @EnvironmentObject var model:ContentModel
@@ -112,14 +91,27 @@ struct TestView: View {
                 // Submit Button
                 Button {
                     
-                    // Changes submitted state to true
-                    submitted = true
-                    
-                    // Checks the answer and increment the counter if correct
-                    if selectedAnswerIndex == model.currentQuestion!.correctIndex {
-                        numCorrect += 1
+                    // Check if answer has been submitted
+                    if submitted ==  true {
+                        // Answer has been submitted, move to next question
+                        model.nextQuestion()
+                        
+                        // reset properties
+                        submitted = false
+                        selectedAnswerIndex = nil // allows user to select a new answer for next question
                     }
-                    
+                    else {
+                        // Submit the answer
+
+                        // Changes submitted state to true
+                        submitted = true
+                        
+                        // Checks the answer and increment the counter if correct
+                        if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                            numCorrect += 1
+                        }
+                    }
+                   
                 } label: {
                     
                     ZStack {
@@ -127,7 +119,7 @@ struct TestView: View {
                         RectangleCard(color: .green)
                             .frame(height: 48)
                         
-                        Text("Submit")
+                        Text(buttonText)
                             .bold()
                             .foregroundColor(Color.white)
                     }
@@ -141,6 +133,22 @@ struct TestView: View {
             // If test hasn't loaded because of IoS 14.5 and higher
             ProgressView() // it will gonna trigger onAppears in HomeView in Test Card, file HomeView
         }        
+    }
+    
+    var buttonText: String {
+        
+        // Check if answer has been submitted
+        if submitted == true {
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                // This is the last quesition
+                return "Finish"
+            }
+                // there is a next question
+                return "Next"
+        }
+        else {
+            return "Submit"
+        }
     }
 }
 
