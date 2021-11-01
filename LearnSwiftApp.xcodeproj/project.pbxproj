@@ -24,6 +24,7 @@
 		889DF98727297E9A00B03A18 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889DF98627297E9900B03A18 /* AVKit.framework */; platformFilter = maccatalyst; };
 		889DF9892729EA2600B03A18 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889DF9882729EA2600B03A18 /* Constants.swift */; };
 		88DA088E272AD9D100259B44 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA088D272AD9D100259B44 /* CodeTextView.swift */; };
+		88FC721E273082F7009C7C6F /* TestResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC721D273082F7009C7C6F /* TestResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		889DF98627297E9900B03A18 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AVKit.framework; sourceTree = DEVELOPER_DIR; };
 		889DF9882729EA2600B03A18 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		88DA088D272AD9D100259B44 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
+		88FC721D273082F7009C7C6F /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				889B990E272C213800438D78 /* TestView.swift */,
 				88DA088D272AD9D100259B44 /* CodeTextView.swift */,
 				889B990C272C01E000438D78 /* RectangleCard.swift */,
+				88FC721D273082F7009C7C6F /* TestResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				889B990F272C213800438D78 /* TestView.swift in Sources */,
+				88FC721E273082F7009C7C6F /* TestResultView.swift in Sources */,
 				8888D3EE2720436100305C19 /* HomeView.swift in Sources */,
 				8882CDA22725FF620059FD1A /* HomeViewRow.swift in Sources */,
 				889DF9802729359500B03A18 /* ContentView.swift in Sources */,

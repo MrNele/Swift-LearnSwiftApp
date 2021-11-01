@@ -130,9 +130,14 @@ struct TestView: View {
             .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
         }
         else {
-            // If test hasn't loaded because of IoS 14.5 and higher
-            ProgressView() // it will gonna trigger onAppears in HomeView in Test Card, file HomeView
-        }        
+            // if current question is nil, we show the result view
+            TestResultView(numCorrect: numCorrect)
+        }
+        
+//        else {
+//            // If test hasn't loaded because of IoS 14.5 and higher
+//            ProgressView() // it will gonna trigger onAppears in HomeView in Test Card, file HomeView
+//        }
     }
     
     var buttonText: String {
