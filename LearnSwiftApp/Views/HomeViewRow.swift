@@ -24,7 +24,7 @@ struct HomeViewRow: View {
                 .cornerRadius(10)
                 .shadow(radius: 5)
                 .aspectRatio(CGSize(width: 335, height: 175), contentMode: .fit)
-                
+            
             
             HStack {
                 

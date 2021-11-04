@@ -15,11 +15,12 @@ struct TestView: View {
     @State var selectedAnswerIndex:Int?
     @State var submitted = false
     @State var numCorrect = 0
-    
+    @State var showResults = false
     
     var body: some View {
         
-        if model.currentQuestion != nil {
+        if model.currentQuestion != nil &&
+            showResults == false {
             
             VStack (alignment: .leading) {
                 // Question number
@@ -33,10 +34,10 @@ struct TestView: View {
                 // Answers
                 ScrollView {
                     VStack {
-                        ForEach (0..<model.currentQuestion!.answers.count, id: \.self) { index in
-                            
-                            // When the button is tapped, it tracks the selected index
+                        ForEach (0..<model.currentQuestion!.answers.count, id: \.self)   { index in
+                          
                             Button {
+                                // When the button is tapped, it tracks the selected index
                                 selectedAnswerIndex = index
                                 
                             } label: {
@@ -65,25 +66,31 @@ struct TestView: View {
                                             RectangleCard(color: Color.red)
                                                 .frame(height: 48)
                                         }
-//                                        else if index == model.currentQuestion!.correctIndex {        ////////////////////
-//
-//                                            // This button is the correct answer
-//                                            // Shows a green background
-//                                            RectangleCard(color: Color.green)
-//                                                .frame(height: 48)
-//                                        }
+                                        else if index == model.currentQuestion!.correctIndex {
+
+                                            // This button is the correct answer
+                                            // Shows a green background
+                                           RectangleCard(color: Color.green)
+                                                .frame(height: 48)
+                                       }
                                         else {
                                             RectangleCard(color: Color.white)
                                                 .frame(height: 48)
                                         }
                                     }
                                     
-                                    Text(model.currentQuestion!.answers[index])  ////////////////
+                                    Text(model.currentQuestion!.answers[index])
                                 }
+                                
+                                
                             }
                             .disabled(submitted)
+                            
                         }
                     }
+                    
+                    
+                    
                     .accentColor(.black)
                     .padding()
                 }
@@ -91,17 +98,26 @@ struct TestView: View {
                 // Submit Button
                 Button {
                     
-                    // Check if answer has been submitted
+                    // Checks if answer has been submitted
                     if submitted ==  true {
-                        // Answer has been submitted, move to next question
-                        model.nextQuestion()
                         
-                        // reset properties
-                        submitted = false
-                        selectedAnswerIndex = nil // allows user to select a new answer for next question
+                        // Check if it's the last question
+                        if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                            
+                            // Shows the results
+                            showResults = true
+                        }
+                        else {
+                            // Answer shas already been submitted, move to next question
+                            model.nextQuestion()
+                            
+                            // Reset properties
+                            submitted = false
+                            selectedAnswerIndex = nil
+                        }
                     }
                     else {
-                        // Submit the answer
+                        // Submits the answer
 
                         // Changes submitted state to true
                         submitted = true
@@ -126,30 +142,33 @@ struct TestView: View {
                     .padding()
                 }
                 .disabled(selectedAnswerIndex == nil)
+                
             }
             .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
+            
         }
-        else {
+        else if showResults == true{
             // if current question is nil, we show the result view
             TestResultView(numCorrect: numCorrect)
+        }        
+        else {
+            // If test hasn't loaded because of IoS 14.5 and higher
+            ProgressView() // it will gonna trigger onAppears in HomeView in Test Card, file HomeView
         }
-        
-//        else {
-//            // If test hasn't loaded because of IoS 14.5 and higher
-//            ProgressView() // it will gonna trigger onAppears in HomeView in Test Card, file HomeView
-//        }
     }
     
     var buttonText: String {
         
-        // Check if answer has been submitted
+        // Checks if answer has been submitted
         if submitted == true {
             if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
                 // This is the last quesition
                 return "Finish"
             }
+            else {
                 // there is a next question
-                return "Next"
+                return "Next"                
+            }
         }
         else {
             return "Submit"

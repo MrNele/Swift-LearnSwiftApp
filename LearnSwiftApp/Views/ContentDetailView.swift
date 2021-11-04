@@ -11,6 +11,7 @@ import AVKit  // contains a video player
 struct ContentDetailView: View {
     
     @EnvironmentObject var model: ContentModel
+    
     var body: some View {
         
         let lesson = model.currentLesson
@@ -21,54 +22,56 @@ struct ContentDetailView: View {
             if url != nil {
                 VideoPlayer(player: AVPlayer(url: url!))
                     .cornerRadius(10)
-        }
-        // TDescription
-        CodeTextView()
+            }
             
-        // Next lesson button
-        
-        // Show next lesson button, only if there is a next lesson
-        if model.hasNextLesson() {
+            // TDescription
+            CodeTextView()
             
-            Button(action: {
-            
-            // Advance the lesson
-            model.hasNextLesson()
+            // Shows next lesson button, only if there is a next lesson
+            if model.hasNextLesson() {
                 
-            }, label: {
-                ZStack {
-            
-                    RectangleCard(color: Color.green)
-                        .frame(height: 48)
-               
-            Text("Next lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
-                        .foregroundColor(Color.white)
-                        .bold()
+                Button(action: {
+                    
+                    // Advance the lesson
+                    model.nextLesson()
+                    
+                }, label: {
+                    
+                    ZStack {
+                        
+                        RectangleCard(color: Color.green)
+                            .frame(height: 48)
+                        
+                        Text("Next lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
+                            .foregroundColor(Color.white)
+                            .bold()
                     }
                 })
             }
             else {
-                // Show the complete button if it is else
-                Button(action: {
+                // Show the complete button instead
                 
-                // Take the user back to the homeview
+                Button(action: {
+                    
+                    // Take the user back to the homeview
                     model.currentContentSelected = nil
                     
                 }, label: {
                     
                     ZStack {
-                
+                    
                         RectangleCard(color: Color.green)
-                            .frame(height: 48)
-                
-                Text("Complete")
+                            .frame(height:48)
+                        
+                        Text("Complete")
                             .foregroundColor(Color.white)
                             .bold()
-                        }
-                    })            }
+                    }
+                })
+            }
         }
-        .padding()
-        .navigationTitle(lesson?.title ?? "")
+            .padding()
+            .navigationBarTitle(lesson?.title ?? "")
     }
 }
 

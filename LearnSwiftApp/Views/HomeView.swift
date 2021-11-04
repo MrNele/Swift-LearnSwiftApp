@@ -3,7 +3,6 @@
 //  LearnSwiftApp
 //
 //  Created by iMac on 20.10.21..
-//
 
 import SwiftUI
 
@@ -29,42 +28,54 @@ struct HomeView: View {
                                 NavigationLink(
                                     destination:
                                         ContentView()
-                                                .onAppear(perform: {
-                                                    model.beginModule(module.id)
-                                                }),
+                                            .onAppear(perform: {
+                                                model.beginModule(module.id)
+                                            }),
                                     tag: module.id,
                                     selection: $model.currentContentSelected) {
+                                    
+                                        // Learning Card
+                                        HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
                                         
-                                    // Learning card
-                                    HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
-                                }
+                                    }
                                 
                                 NavigationLink(
-                                    destination: TestView()
-                                        .onAppear(perform: {
-                                        model.beginTest(module.id)
-                                    }),
+                                    destination:
+                                        TestView()
+                                            .onAppear(perform: {
+                                            model.beginTest(module.id)
+                                        }),
                                     tag: module.id,
-                                    selection: $model.currentContentSelected) {
-                                
-                                // test card
-                                HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lessons", time: module.test.time)
-                                
+                                    selection: $model.currentTestSelected) {
+                                    
+                                    // Test Card
+                                    HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lessons", time: module.test.time)
                                 }
                                 
-                                NavigationLink(destination: EmptyView() ) {
-                                    EmptyView()
-                                }
-                                               
+                                
+                                
+                            }
+                            .padding(.bottom, 10)
                         }
+                        
                     }
                     .accentColor(.black)
                     .padding()
+                    
                 }
             }
-            .navigationTitle("Get started")
+            .navigationTitle("Get Started")
+            .onChange(of: model.currentContentSelected) { changedValue in
+                if changedValue == nil {
+                    model.currentModule = nil
+                }
+            }
+            .onChange(of: model.currentTestSelected) { changedValue in
+                if changedValue == nil {
+                    model.currentModule = nil
+                }
+            }
         }
-    }
     }
 }
 
@@ -74,5 +85,3 @@ struct HomeView_Previews: PreviewProvider {
             .environmentObject(ContentModel())
     }
 }
-
-

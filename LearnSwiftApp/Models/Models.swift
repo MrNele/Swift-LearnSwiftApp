@@ -22,7 +22,6 @@ struct Content: Decodable, Identifiable {
     var time: String
     var description: String
     var lessons: [Lesson]
-    
 }
 
 struct Lesson: Decodable, Identifiable {

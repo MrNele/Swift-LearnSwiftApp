@@ -9,5 +9,5 @@ import Foundation
 
 struct Constants {
     
-    static var videoHostUrl = "https://mrnele.github.io/Xcode_learningJSON/"
+    static var videoHostUrl = "https://mrnele.github.io/Swift-learningJSON/"
 }

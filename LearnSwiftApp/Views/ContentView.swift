@@ -16,33 +16,34 @@ struct ContentView: View {
         ScrollView {
             
             LazyVStack {
-                    
-                    // Confirm that currentModule is set
-                    if model.currentModule != nil {
+                
+                // Confirm that currentModule is set
+                if model.currentModule != nil {
+                
+                    ForEach(0..<model.currentModule!.content.lessons.count) { index in
                         
-                        ForEach(0..<model.currentModule!.content.lessons.count) { index in
-                          
-                            NavigationLink(
-                                destination:
-                                    ContentDetailView()
+                        NavigationLink(
+                            destination:
+                                ContentDetailView()
                                     .onAppear(perform: {
                                         model.beginLesson(index)
                                     }),
-                                label: {
-                                    ContentViewRow(index: index)
-                                })
-                           
-                        }
+                            label: {
+                                ContentViewRow(index: index)
+                            })
+                        
                     }
                 }
-                .accentColor(.black)
-                .padding()
-                .navigationBarTitle("Learn \(model.currentModule?.category ?? "")")
+            }
+            .accentColor(.black)
+            .padding()
+            .navigationBarTitle("Learn \(model.currentModule?.category ?? "")")
+            
         }
+        
+        
     }
 }
-        
-
 
 
 
