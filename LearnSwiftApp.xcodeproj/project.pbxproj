@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4571541B23634EC39D9361 /* Pods_LearnSwiftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E2A43601E6803F512E85CD /* Pods_LearnSwiftApp.framework */; };
 		8882CDA22725FF620059FD1A /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8882CDA12725FF620059FD1A /* HomeViewRow.swift */; };
 		888529942722C76C00B91317 /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = 888529922722C76C00B91317 /* style.html */; };
 		888529952722C76C00B91317 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 888529932722C76C00B91317 /* data.json */; };
 		888529972722E02400B91317 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888529962722E02400B91317 /* Models.swift */; };
+		88888846274D25650057BF34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88888845274D25650057BF34 /* GoogleService-Info.plist */; };
+		88888849274D2B9E0057BF34 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 88888848274D2B9E0057BF34 /* FirebaseFirestore */; };
+		8888884B274D30350057BF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888884A274D30350057BF34 /* AppDelegate.swift */; };
 		8888D3EC2720436100305C19 /* LearnSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888D3EB2720436100305C19 /* LearnSwiftApp.swift */; };
 		8888D3EE2720436100305C19 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888D3ED2720436100305C19 /* HomeView.swift */; };
 		8888D3F02720436300305C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8888D3EF2720436300305C19 /* Assets.xcassets */; };
@@ -32,6 +36,8 @@
 		888529922722C76C00B91317 /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
 		888529932722C76C00B91317 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		888529962722E02400B91317 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		88888845274D25650057BF34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8888884A274D30350057BF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8888D3E82720436100305C19 /* LearnSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8888D3EB2720436100305C19 /* LearnSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSwiftApp.swift; sourceTree = "<group>"; };
 		8888D3ED2720436100305C19 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -48,6 +54,9 @@
 		889DF9882729EA2600B03A18 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		88DA088D272AD9D100259B44 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		88FC721D273082F7009C7C6F /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
+		9A0C3E1206E588795DFAEF40 /* Pods-LearnSwiftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSwiftApp.debug.xcconfig"; path = "Target Support Files/Pods-LearnSwiftApp/Pods-LearnSwiftApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F4BBB22185565222315F3009 /* Pods-LearnSwiftApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSwiftApp.release.xcconfig"; path = "Target Support Files/Pods-LearnSwiftApp/Pods-LearnSwiftApp.release.xcconfig"; sourceTree = "<group>"; };
+		F8E2A43601E6803F512E85CD /* Pods_LearnSwiftApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnSwiftApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,18 +65,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				889DF98727297E9A00B03A18 /* AVKit.framework in Frameworks */,
+				88888849274D2B9E0057BF34 /* FirebaseFirestore in Frameworks */,
+				2C4571541B23634EC39D9361 /* Pods_LearnSwiftApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F3B45A249A58A7665BFB296 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A0C3E1206E588795DFAEF40 /* Pods-LearnSwiftApp.debug.xcconfig */,
+				F4BBB22185565222315F3009 /* Pods-LearnSwiftApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8888D3DF2720436100305C19 = {
 			isa = PBXGroup;
 			children = (
 				8888D3EA2720436100305C19 /* LearnSwiftApp */,
 				8888D3E92720436100305C19 /* Products */,
 				889DF98527297E9300B03A18 /* Frameworks */,
+				1F3B45A249A58A7665BFB296 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,8 +111,10 @@
 				8888D3FC2720437700305C19 /* Resources */,
 				8888D3FB2720437300305C19 /* Helpers */,
 				8888D3EF2720436300305C19 /* Assets.xcassets */,
+				88888845274D25650057BF34 /* GoogleService-Info.plist */,
 				8888D3F42720436300305C19 /* LearnSwiftApp.entitlements */,
 				8888D3F12720436300305C19 /* Preview Content */,
+				8888884A274D30350057BF34 /* AppDelegate.swift */,
 			);
 			path = LearnSwiftApp;
 			sourceTree = "<group>";
@@ -156,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				889DF98627297E9900B03A18 /* AVKit.framework */,
+				F8E2A43601E6803F512E85CD /* Pods_LearnSwiftApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,15 +192,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8888D3F72720436300305C19 /* Build configuration list for PBXNativeTarget "LearnSwiftApp" */;
 			buildPhases = (
+				468CB240C8AC882745014F41 /* [CP] Check Pods Manifest.lock */,
 				8888D3E42720436100305C19 /* Sources */,
 				8888D3E52720436100305C19 /* Frameworks */,
 				8888D3E62720436100305C19 /* Resources */,
+				E2A9B60D0E3ED567C6FD8C09 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = LearnSwiftApp;
+			packageProductDependencies = (
+				88888848274D2B9E0057BF34 /* FirebaseFirestore */,
+			);
 			productName = LearnSwiftApp;
 			productReference = 8888D3E82720436100305C19 /* LearnSwiftApp.app */;
 			productType = "com.apple.product-type.application";
@@ -204,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 8888D3DF2720436100305C19;
+			packageReferences = (
+				88888847274D2B9E0057BF34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8888D3E92720436100305C19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -220,12 +253,55 @@
 			files = (
 				888529942722C76C00B91317 /* style.html in Resources */,
 				8888D3F32720436300305C19 /* Preview Assets.xcassets in Resources */,
+				88888846274D25650057BF34 /* GoogleService-Info.plist in Resources */,
 				8888D3F02720436300305C19 /* Assets.xcassets in Resources */,
 				888529952722C76C00B91317 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		468CB240C8AC882745014F41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearnSwiftApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2A9B60D0E3ED567C6FD8C09 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LearnSwiftApp/Pods-LearnSwiftApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LearnSwiftApp/Pods-LearnSwiftApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LearnSwiftApp/Pods-LearnSwiftApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8888D3E42720436100305C19 /* Sources */ = {
@@ -236,6 +312,7 @@
 				88FC721E273082F7009C7C6F /* TestResultView.swift in Sources */,
 				8888D3EE2720436100305C19 /* HomeView.swift in Sources */,
 				8882CDA22725FF620059FD1A /* HomeViewRow.swift in Sources */,
+				8888884B274D30350057BF34 /* AppDelegate.swift in Sources */,
 				889DF9802729359500B03A18 /* ContentView.swift in Sources */,
 				889DF984272970E600B03A18 /* ContentDetailView.swift in Sources */,
 				8888D3EC2720436100305C19 /* LearnSwiftApp.swift in Sources */,
@@ -368,6 +445,7 @@
 		};
 		8888D3F82720436300305C19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A0C3E1206E588795DFAEF40 /* Pods-LearnSwiftApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -396,6 +474,7 @@
 		};
 		8888D3F92720436300305C19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4BBB22185565222315F3009 /* Pods-LearnSwiftApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,6 +523,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		88888847274D2B9E0057BF34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88888848274D2B9E0057BF34 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88888847274D2B9E0057BF34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8888D3E02720436100305C19 /* Project object */;
 }
