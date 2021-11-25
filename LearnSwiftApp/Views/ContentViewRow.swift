@@ -19,7 +19,7 @@ struct ContentViewRow: View {
             return model.currentModule!.content.lessons[index]
         }
         else {
-            return Lesson(id: 0, title: "", video: "", duration: "", explanation: "")
+            return Lesson(id: "", title: "", video: "", duration: "", explanation: "")
         }
     }
     

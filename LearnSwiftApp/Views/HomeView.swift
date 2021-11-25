@@ -29,9 +29,11 @@ struct HomeView: View {
                                     destination:
                                         ContentView()
                                             .onAppear(perform: {
-                                                model.beginModule(module.id)
+                                                model.getLessons(module: module) {
+                                                    model.beginModule(module.id)
+                                                }
                                             }),
-                                    tag: module.id,
+                                    tag: module.id.hash,        //hash is some like a representation of String
                                     selection: $model.currentContentSelected) {
                                     
                                         // Learning Card
@@ -45,7 +47,7 @@ struct HomeView: View {
                                             .onAppear(perform: {
                                             model.beginTest(module.id)
                                         }),
-                                    tag: module.id,
+                                    tag: module.id.hash,     //hash is some like a representation of String
                                     selection: $model.currentTestSelected) {
                                     
                                     // Test Card
